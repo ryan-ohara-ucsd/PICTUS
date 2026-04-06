@@ -1,4 +1,7 @@
 # PICTUS
+
+![lab_logo](https://github.com/user-attachments/assets/6ae06c25-0459-4676-a054-f8e9962b4b88)
+
 Created by the Hamdoun lab at the Scripps Institution of Oceanography.
 
 PICTUS (Positional Identification and Continuous Tracking of Urchin Subjects) is a computer vision-based algorithm designed to autonomously track the 3D location of a painted sea urchin, L. pictus, within a lab-based tank. This repository contains:
