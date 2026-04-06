@@ -7,8 +7,11 @@ Created by the [Hamdoun lab at the Scripps Institution of Oceanography](https://
 PICTUS (Positional Identification and Continuous Tracking of Urchin Subjects) is a computer vision-based algorithm designed to autonomously track the 3D location of a painted sea urchin, L. pictus, within a lab-based tank. This repository contains:
 
 a) A YOLOv12n model trained to recognize roving L. pictus.
+
 b) A series of scripts that apply this model to live footage collected on a Raspberry Pi 5's Camera Module 3 Wide and convert 2D positional bounding boxes into a 3D space.
+
 c) Instructions on how to use the above scripts so you can perform live inference of your own.
+
 d) 3D printer-ready .stl files of the lid and custom tank used in our lab. Note that this system can be adapted to any configuration: you just need to have two Camera Module 3s.
 
 Before beginning, make sure you have obtained the following:
