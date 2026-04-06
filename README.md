@@ -14,6 +14,8 @@ c) Instructions on how to use the above scripts so you can perform live inferenc
 
 d) 3D printer-ready .stl files of the lid and custom tank used in our lab. Note that this system can be adapted to any configuration: you just need to have two Camera Module 3s.
 
+===================================================================================================================================================================
+
 Before beginning, make sure you have obtained the following:
 
 a) Raspberry Pi 5 (x4). You can format each of the Pis using the Raspberry Pi Imager. During formatting, you will want to install the Raspberry Pi OS (Legacy, 64-bit) containing a port of Debian Bookworm. Installing the wrong OS can cause several of the packages used by this code to break.
