@@ -14,7 +14,7 @@ c) Instructions on how to use the above scripts so you can perform live inferenc
 
 d) 3D printer-ready .stl files of the lid and custom tank used in our lab. Note that this system can be adapted to any configuration: you just need to have two Camera Module 3s.
 
-============================================================================================
+============================================================================
 
 Before beginning, make sure you have obtained the following:
 
@@ -30,7 +30,7 @@ d) Arduino Nano Every (x1), breadboard (x1), and appropriate wiring. You will be
 
 It is particularly important that both Pis are connected to the Arduino via GPIO 17 (pin 11 on the Raspberry Pi 5).
 
-============================================================================================
+============================================================================
 
 Once you have obtained the necessary physical components, perform the following software setup steps:
 
