@@ -20,6 +20,16 @@ a) Raspberry Pi 5 (x4). You can format each of the Pis using the Raspberry Pi Im
 
 b) Camera Module 3 (x2). You will want to install one of the Camera Module 3 units per Raspberry Pi. Two of the Pis should have attached Camera Module 3s and two will not. From this point onward, the two Pis with the Camera Module 3 units will be referred to as the remote Pis while the two Pis without the Camera Module 3 units will be referred to as the local Pis.
 
-c) On both remote Pis, create a virtual environment using `python3 -m venv –system-site-packages venv` on the command line. Within your venv, install pip and Ultralytics via `python -m pip install -U pip` and `python -m pip install ultralytics`. Then, still within your venv, uninstall numpy via `python -m pip uninstall numpy`.
+c) Physical mount for your cameras. You can either 3D print the mounts used by our lab by referencing the attached .stl files or design your own. You will want to make sure that both Camera Module 3 units are mounted such that they can see the urchin you are tracking.
+
+d) Arduino Nano Every (x1), breadboard (x1), and appropriate wiring. You will be wiring the Arduino to the two local Pis using the below diagram:
+
+**CREATE AND INSERT WIRING DIAGRAM**
+
+It is particularly important that both Pis are connected to the Arduino via GPIO 17 (pin 11 on the Raspberry Pi 5).
+
+Once you have obtained the necessary physical components, perform the following software setup steps:
+
+a) On both remote Pis, create a virtual environment using `python3 -m venv –system-site-packages venv` on the command line. Within your venv, install pip and Ultralytics via `python -m pip install -U pip` and `python -m pip install ultralytics`. Then, still within your venv, uninstall numpy via `python -m pip uninstall numpy`.
 
 You are now ready to begin using PICTUS.
