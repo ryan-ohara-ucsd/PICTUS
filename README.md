@@ -37,3 +37,11 @@ Once you have obtained the necessary physical components, perform the following 
 a) On both remote Pis, create a virtual environment using `python3 -m venv –system-site-packages venv` on the command line. Within your venv, install pip and Ultralytics via `python -m pip install -U pip` and `python -m pip install ultralytics`. Then, still within your venv, uninstall numpy via `python -m pip uninstall numpy`.
 
 You are now ready to begin using PICTUS.
+
+============================================================================
+
+1) Download **remoteDaemon.py** and **best.pt** onto your remote Pis, **localTrigger.py** onto your local Pis, and **arduinoPulse.ino** onto the device you will be using to trigger your synchronized recordings.
+
+2) Check and record the IP addresses of all of your Pis using `hostname -I` from the command line. You will want to make sure that the network your Pis are connected to will allow you to maintain stable IP addresses.
+
+3) 
