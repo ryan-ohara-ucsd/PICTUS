@@ -44,4 +44,4 @@ You are now ready to begin using PICTUS.
 
 2) Check and record the IP addresses of all of your Pis using `hostname -I` from the command line. You will want to make sure that the network your Pis are connected to will allow you to maintain stable IP addresses.
 
-3) 
+3) Physically prepare your system for recording. Your local Pis will be wired to another device (any computer is fine, so long as it can run **Arduino IDE** and **arduinoPulse.ino**). Your remote Pis will be wherever you are recording.
