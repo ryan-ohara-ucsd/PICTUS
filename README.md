@@ -45,3 +45,7 @@ You are now ready to begin using PICTUS.
 2) Check and record the IP addresses of all of your Pis using `hostname -I` from the command line. You will want to make sure that the network your Pis are connected to will allow you to maintain stable IP addresses.
 
 3) Physically prepare your system for recording. Your local Pis will be wired to another device (any computer is fine, so long as it can run **Arduino IDE** and **arduinoPulse.ino**). Your remote Pis will be wherever you are recording.
+
+4) Open your virtual environment on the remote Pis. Run **remoteDaemon.py** with `remoteDaemon.py --local-ip **IP OF THE LINKED LOCAL PI** --model-path **PATH TO best.pt** --capture-duration **LENGTH OF DESIRED RECORDING** --output-folder **LOCATION TO SAVE RECORDINGS AND BOUNDING BOXES TO**`. You should see the message: **Expected message: START**.
+
+5) Run **localTrigger.py** with `localTrigger.py --remote-host **IP OF THE LINKED REMOTE PI** --remote-user **USERNAME ON LINKED REMOTE PI**`. You should see the message: **Waiting for Arduino pulse...**.
