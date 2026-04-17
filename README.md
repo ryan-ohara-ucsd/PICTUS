@@ -53,3 +53,7 @@ You are now ready to begin using PICTUS.
 4) Open your virtual environment on the remote Pis. Run **remoteDaemon.py** with `remoteDaemon.py --local-ip **IP OF THE LINKED LOCAL PI** --model-path **PATH TO best.pt** --capture-duration **LENGTH OF DESIRED RECORDING** --output-folder **LOCATION TO SAVE RECORDINGS AND BOUNDING BOXES TO**`. You should see the message: **Expected message: START**.
 
 5) Run **localTrigger.py** with `localTrigger.py --remote-host **IP OF THE LINKED REMOTE PI** --remote-user **USERNAME ON LINKED REMOTE PI**`. You should see the message: **Waiting for Arduino pulse...**.
+
+6) Run **arduinoPulse.ino**. This should immediately trigger the message **Pulse at TIME. Sent firing key at TIME.** on your local Pis and the message **Starting recording.** on your remote Pis.
+
+7) Once the designated recording time as passed, you will see the message **Finished recording. Press Ctrl + C to stop the program.** on your remote Pis. When the recording finishes, a video of the recording (containing bounding boxes) and a .csv file containing the coordinates of the bounding box(es) from each frame will be saved at the location designated in step 4.
