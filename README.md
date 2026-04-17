@@ -28,6 +28,7 @@ d) Arduino Nano Every (x1), breadboard (x1), and appropriate wiring. You will be
 
 <img width="287" height="470" alt="wiringDiagram" src="https://github.com/user-attachments/assets/1fea22ef-ca4f-4273-9419-e5f66fdacf68" />
 
+
 It is particularly important that both Pis are connected to the Arduino via GPIO 17 (pin 11 on the Raspberry Pi 5).
 
 ============================================================================
