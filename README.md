@@ -24,10 +24,9 @@ b) Camera Module 3 (x2). You will want to install one of the Camera Module 3 uni
 
 c) Physical mount for your cameras. You can either 3D print the mounts used by our lab by referencing the attached .3mf files or design your own. You will want to make sure that both Camera Module 3 units are mounted such that they can see the urchin you are tracking.
 
-d) Arduino Nano Every (x1), breadboard (x1), and appropriate wiring. You will be wiring the Arduino to the two local Pis using the below diagram:
+d) Arduino Nano Every (x1), breadboard (x1), and appropriate wiring. You will be wiring the Arduino to the local Pis using the below diagram. You will follow this same wiring process for every local Pi you attach to the Arduino:
 
 <img width="287" height="470" alt="wiringDiagram" src="https://github.com/user-attachments/assets/1fea22ef-ca4f-4273-9419-e5f66fdacf68" />
-
 
 It is particularly important that both Pis are connected to the Arduino via GPIO 17 (pin 11 on the Raspberry Pi 5).
 
