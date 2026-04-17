@@ -26,7 +26,7 @@ c) Physical mount for your cameras. You can either 3D print the mounts used by o
 
 d) Arduino Nano Every (x1), breadboard (x1), and appropriate wiring. You will be wiring the Arduino to the two local Pis using the below diagram:
 
-**CREATE AND INSERT WIRING DIAGRAM**
+<img width="287" height="470" alt="wiringDiagram" src="https://github.com/user-attachments/assets/1fea22ef-ca4f-4273-9419-e5f66fdacf68" />
 
 It is particularly important that both Pis are connected to the Arduino via GPIO 17 (pin 11 on the Raspberry Pi 5).
 
@@ -34,7 +34,11 @@ It is particularly important that both Pis are connected to the Arduino via GPIO
 
 Once you have obtained the necessary physical components, perform the following software setup steps:
 
-a) On both remote Pis, create a virtual environment using `python3 -m venv –system-site-packages venv` on the command line. Within your venv, install pip and Ultralytics via `python -m pip install -U pip` and `python -m pip install ultralytics`. Then, still within your venv, uninstall numpy via `python -m pip uninstall numpy`.
+a) On both remote Pis, create a virtual environment using `python3 -m venv –system-site-packages venv` on the command line. 
+
+b) Within your venv, install pip and Ultralytics via `python -m pip install -U pip` and `python -m pip install ultralytics`. 
+
+c) Then, still within your venv, uninstall numpy via `python -m pip uninstall numpy`.
 
 You are now ready to begin using PICTUS.
 
