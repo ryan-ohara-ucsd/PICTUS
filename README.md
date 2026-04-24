@@ -42,6 +42,14 @@ c) Then, still within your venv, uninstall numpy via `python -m pip uninstall nu
 
 d) Download **urchinCV.pt** from this repository onto all remote Pis.
 
+e) Design and print out a calibration checkerboard from [this website](https://markhedleyjones.com/projects/calibration-checkerboard-collection). When designing the checkerboard, make sure that it has a different number of rows and columns and that it will be small enough such that it can be seen simultaneously from all cameras. Note that, if you choose to orient your cameras so they are 180 degrees removed from one another (i.e. the setup outlined in our paper), you will need to print out two checkerboards.
+
+f) Mount your checkerboard on a rigid surface. It is important that the checkerboard is flat. If your cameras are oriented 180 degrees removed from one another, mount a checkerboard on each side of your rigid surface such that the two checkerboards are back-to-back.
+
+g) Make sure that your cameras are oriented exactly as they will be when recording urchin movement. Place your mounted checkerboard between the cameras such that all checkerboard boxes are visible on all cameras. **Without moving the checkerboard,** take a photo from all cameras. It is essential that the checkerboard is in the exact same position across all photos. Once you have taken a photo of the checkerboard from all cameras, move the checkerboard and repeat. You will ultimately want approximately 30-50 sets of images of the checkerboard. The checkerboard's x, y, and z orientation should change between image sets such that it ultimately covers the entire 3D space your cameras will be recording. Do not rotate the checkerboard more than ~45 degrees.
+
+h) Once you are happy with your image sets, collect them into several folders. Each folder should contain all images taken from one camera. Sets of images (i.e. the images taken from different cameras of the same checkerboard orientation) should have the same name. Run **scriptCalibration.py** to generate a set of transformation matrices. These matrices will later be used to convert your 2D points into 3D coordinates.
+
 You are now ready to begin using PICTUS.
 
 ============================================================================
@@ -58,4 +66,6 @@ You are now ready to begin using PICTUS.
 
 6) Run **arduinoPulse.ino**. This should immediately trigger the message **Pulse at TIME. Sent firing key at TIME.** on your local Pis and the message **Starting recording.** on your remote Pis.
 
-7) Once the designated recording time as passed, you will see the message **Finished recording. Press Ctrl + C to stop the program.** on your remote Pis. When the recording finishes, a video of the recording (containing bounding boxes) and a .csv file containing the coordinates of the bounding box(es) from each frame will be saved at the location designated in step 4.
+7) Once the designated recording time as passed, you will see the following message on your remote Pis: **Finished recording. Press Ctrl + C to stop the program.** When the recording finishes, a video of the recording (containing bounding boxes) and a .csv file containing the coordinates of the bounding box(es) from each frame will be saved at the location designated in step 4.
+
+8) Move the .csv files containing the bounding box coordinates from both remote Pis onto the same computer which contains your stereo matrices from above. Run **script2DTo3D.py**, making sure to first edit the paths within the script appropriately. This will generate a .csv file containing the 3D coordinates of your tracked urchin!
