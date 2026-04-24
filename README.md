@@ -50,6 +50,8 @@ g) Make sure that your cameras are oriented exactly as they will be when recordi
 
 h) Once you are happy with your image sets, collect them into several folders. Each folder should contain all images taken from one camera. Sets of images (i.e. the images taken from different cameras of the same checkerboard orientation) should have the same name. Run **scriptCalibration.py** to generate a set of transformation matrices. These matrices will later be used to convert your 2D points into 3D coordinates.
 
+i) Note that, if you ever change the configuration of your cameras, you will need to repeat steps e-h.
+
 You are now ready to begin using PICTUS.
 
 ============================================================================
