@@ -40,6 +40,8 @@ b) Within your venv, install pip and Ultralytics via `python -m pip install -U p
 
 c) Then, still within your venv, uninstall numpy via `python -m pip uninstall numpy`.
 
+d) Download **urchinCV.pt** from this repository onto all remote Pis.
+
 You are now ready to begin using PICTUS.
 
 ============================================================================
@@ -50,7 +52,7 @@ You are now ready to begin using PICTUS.
 
 3) Physically prepare your system for recording. Your local Pis will be wired to another device (any computer is fine, so long as it can run **Arduino IDE** and **arduinoPulse.ino**). Your remote Pis will be wherever you are recording.
 
-4) Open your virtual environment on the remote Pis. Run **remoteDaemon.py** with `remoteDaemon.py --local-ip **IP OF THE LINKED LOCAL PI** --model-path **PATH TO best.pt** --capture-duration **LENGTH OF DESIRED RECORDING** --output-folder **LOCATION TO SAVE RECORDINGS AND BOUNDING BOXES TO**`. You should see the message: **Expected message: START**.
+4) Open your virtual environment on the remote Pis. Run **remoteDaemon.py** with `remoteDaemon.py --local-ip **IP OF THE LINKED LOCAL PI** --model-path **PATH TO urchinCV.pt** --capture-duration **LENGTH OF DESIRED RECORDING** --output-folder **LOCATION TO SAVE RECORDINGS AND BOUNDING BOXES TO**`. You should see the message: **Expected message: START**.
 
 5) Run **localTrigger.py** with `localTrigger.py --remote-host **IP OF THE LINKED REMOTE PI** --remote-user **USERNAME ON LINKED REMOTE PI**`. You should see the message: **Waiting for Arduino pulse...**.
 
