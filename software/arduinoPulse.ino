@@ -7,7 +7,7 @@ void setup() {
   pinMode(TRIGGER_PIN, OUTPUT);
   digitalWrite(TRIGGER_PIN, LOW);
   Serial.begin(115200);
-  Serial.println("Trigger generator started (30 Hz)");
+  Serial.println("Pulse sent.");
 }
 
 void loop() {
