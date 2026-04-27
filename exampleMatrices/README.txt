@@ -1,0 +1,2 @@
+The stereo matrices in this folder were used for the experimental setup described in our PICTUS paper. If you used the 3D print files on this Github and used/oriented the same cameras as described in the paper, then these files should provide a fairly accurate 2D -> 3D conversion. However, we highly
+recommend that you generate your own stereo matrices as described in the general README for maximum accuracy.
