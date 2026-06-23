@@ -42,7 +42,7 @@ c) Then, still within your venv, uninstall numpy via `python -m pip uninstall nu
 
 d) Download **urchinCV.pt** from this repository onto all remote Pis.
 
-e) Design and print out a calibration checkerboard from [this website](https://markhedleyjones.com/projects/calibration-checkerboard-collection). When designing the checkerboard, make sure that it has a different number of rows and columns and that it will be small enough such that it can be seen simultaneously from all cameras. Note that, if you choose to orient your cameras so they are 180 degrees removed from one another (i.e. the setup outlined in our paper), you will need to print out two checkerboards.
+e) Design and print out a calibration checkerboard from [this website]([https://markhedleyjones.com/projects/calibration-checkerboard-collection](https://calib.io/pages/camera-calibration-pattern-generator?srsltid=AfmBOoq6vzACCUKuUx5DGQdfQGDeRlbra-3Hk-I1jseB0dcrQT10LPJQ)). When designing the checkerboard, make sure that it has a different number of rows and columns and that it will be small enough such that it can be seen simultaneously from all cameras.
 
 f) Mount your checkerboard on a rigid surface. It is important that the checkerboard is flat. If your cameras are oriented 180 degrees removed from one another, mount a checkerboard on each side of your rigid surface such that the two checkerboards are back-to-back.
 
