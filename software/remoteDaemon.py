@@ -10,7 +10,7 @@ from ultralytics import YOLO
 from picamera2 import Picamera2
 from libcamera import Transform
 
-'''Runs on remote Pis. Does the following:
+'''Runs on remote Pi. Does the following:
 1) Listens for firing key from teleoperating local Pi. Firing key is
 provided by localTrigger.py and the synchronous Arduino pulse.
 
@@ -20,8 +20,10 @@ and run YOLO model on footage afterwards.
 
 3) Saves footage locally.
 
-4) TODO: Sends footage back to teleoperating local Pi (this isn't working
-right now).'''
+4) Sends footage back to teleoperating local Pi. Note that this sometimes
+fails if your recording contains many frames or if your network is unable
+to support large data transfers. If this step times out, your output files
+will be saved automatically onto the remote Pi.'''
 
 
 def record_with_yolo(
@@ -107,17 +109,17 @@ def record_with_yolo(
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--bind", default="0.0.0.0", help="UDP bind address")
-    ap.add_argument("--listen-port", type=int, default=5005, help="UDP listen port")
-    ap.add_argument("--local-ip", required=True, help="Local Pi IP to send DONE messages to")
-    ap.add_argument("--local-port", type=int, default=5006, help="Local Pi UDP port for DONE messages")
-    ap.add_argument("--model-path", default="/media/rohara/AEAB-F3D83/newBest.pt")
+    ap.add_argument("--bind", default="0.0.0.0")
+    ap.add_argument("--listen-port", type=int, default=5005)
+    ap.add_argument("--local-ip", required=True)
+    ap.add_argument("--local-port", type=int, default=5006)
+    ap.add_argument("--model-path")
     ap.add_argument("--frame-rate", type=float, default=1.0)
     ap.add_argument("--capture-duration", type=float, default=120.0) # in seconds
     ap.add_argument("--width", type=int, default=4608)
     ap.add_argument("--height", type=int, default=2592)
     ap.add_argument("--conf-threshold", type=float, default=0.5)
-    ap.add_argument("--output-folder", default="/media/rohara/AEAB-F3D83")  
+    ap.add_argument("--output-folder")  
     args = ap.parse_args()
 
     model = YOLO(args.model_path)
@@ -134,7 +136,6 @@ def main() -> int:
 
     os.makedirs(args.output_folder, exist_ok=True)
 
-    print(f"Armed. Listening UDP on {args.bind}:{args.listen_port}", flush=True)
     print("Expected message: START <run_id>", flush=True)
 
     try:
@@ -163,10 +164,10 @@ def main() -> int:
 
                 done_msg = f"DONE {run_id} {run_dir}"
                 print("Finished recording. Press Ctrl + C to stop the program.")
-               # done_sock.sendto(done_msg.encode("utf-8"), (args.local_ip, args.local_port))
+                done_sock.sendto(done_msg.encode("utf-8"), (args.local_ip, args.local_port))
                 
             else:
-                print(f"Ignoring unknown message from {addr}: {msg!r}", flush=True)
+                print("Failed run. Aborting.")
 
     except KeyboardInterrupt:
         print("Exiting.", flush=True)
