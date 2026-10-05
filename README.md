@@ -22,7 +22,7 @@ a) Raspberry Pi 5 (x2). You can format each of the Pis using the Raspberry Pi Im
 
 b) Camera Module 3 Wide (x1). One of the Pis should have an attached Camera Module 3 and one will not. From this point onward, the Pi with the Camera Module 3 unit will be referred to as the remote Pi while the Pi without the Camera Module 3 unit will be referred to as the local Pi. The remote Pi will be used to collect and label assay footage in your experimental area, while the local Pi will send commands and direct PICTUS from an office or non-experimental lab space.
 
-c) Physical mount for your cameras. You can either 3D print the mounts used by our lab by referencing the attached .3mf files or design your own. You will want to make sure that the Camera Module 3 unit is mounted such that it can see the urchin you are tracking and the entire plane that the urchin will be moving around on.
+c) Physical mount for your cameras. You can either 3D print the mounts used by our lab by referencing the attached .gcode files or design your own. Note that the .gcode files are set to print using PLA Basic; if you are using a different material, you will want to open the files in a 3D print editor and export again. You will want to make sure that the Camera Module 3 unit is mounted such that it can see the urchin you are tracking and the entire plane that the urchin will be moving around on.
 
 d) Arduino Nano Every (x1), breadboard (x1), and appropriate wiring. You will be wiring the Arduino to the local Pi using the below diagram. If you wish to run multiple PICTUS units or camera, you will follow this same wiring process for every local Pi attached to the Arduino:
 
