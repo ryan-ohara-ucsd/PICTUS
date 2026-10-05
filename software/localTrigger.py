@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 import argparse
 import os
 import shlex
@@ -7,21 +6,23 @@ import socket
 import subprocess
 import time
 from datetime import datetime
-
 import gpiod
 from gpiod.line import Direction, Edge
 
 """
+TODO FOR USER: Adjust settimeout (see lines 72, 97).
+
 Runs on local Pis. Does the following:
 1) Waits for pulse from pictus 2 Arduino.
 
 2) Sends firing key to remote Pis to begin recording.
 
-3) TODO: Receives video files from remote Pis once recording
-is complete (this isn't currently working, so videos must be collected
-from remote Pi USB drives).
+3) Receives video files from remote Pis once recording
+is complete. Again, note that this sometimes fails if your 
+recording contains many frames or if your network is unable
+to support large data transfers. If this step times out, your 
+output files will be saved automatically onto the remote Pi.
 """
-
 
 def run(cmd: list[str], *, check: bool = True) -> None:
     print("\n$", " ".join(shlex.quote(c) for c in cmd), flush=True)
@@ -54,12 +55,11 @@ def main() -> int:
     ap.add_argument("--trigger-chip", default="/dev/gpiochip0")
     ap.add_argument("--trigger-line", type=int, default=17)
     ap.add_argument("--remote-host", required=True)
-    ap.add_argument("--remote-user", default="rohara")
+    ap.add_argument("--remote-user")
     ap.add_argument("--remote-udp-port", type=int, default=5005)
     ap.add_argument("--listen-bind", default="0.0.0.0")
     ap.add_argument("--listen-port", type=int, default=5006)
     ap.add_argument("--once", action="store_true")
-
     ap.add_argument("--local-out", required=True)
     
     args = ap.parse_args()
