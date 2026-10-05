@@ -10,8 +10,6 @@ import gpiod
 from gpiod.line import Direction, Edge
 
 """
-TODO FOR USER: Adjust settimeout (see lines 72, 97).
-
 Runs on local Pis. Does the following:
 1) Waits for pulse from pictus 2 Arduino.
 
@@ -61,6 +59,7 @@ def main() -> int:
     ap.add_argument("--listen-port", type=int, default=5006)
     ap.add_argument("--once", action="store_true")
     ap.add_argument("--local-out", required=True)
+    ap.add_argument("--set-time-out", required=True)
     
     args = ap.parse_args()
 
@@ -69,7 +68,7 @@ def main() -> int:
 
     done_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     done_sock.bind((args.listen_bind, args.listen_port))
-    done_sock.settimeout(2000.0)  # see below comment on timeouts, in seconds
+    done_sock.settimeout(args.set_time_out)  # see below comment on timeouts, in seconds
 
     start_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -94,7 +93,7 @@ def main() -> int:
             # should be longer than all videos (e.g. three consecutive 60 s
             # videos require a timeout of at least 180 s).
             # You will need to rerun localTrigger.py once timeout occurs.
-            done_sock.settimeout(3000.0) # in seconds
+            done_sock.settimeout(args.set_time_out) # in seconds
 
             while True:
                 data, addr = done_sock.recvfrom(4096)
